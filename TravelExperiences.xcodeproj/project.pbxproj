@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8243E109275555AB00D0C421 /* UsersDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243E108275555AA00D0C421 /* UsersDB.swift */; };
+		8243E10B27555B0500D0C421 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243E10A27555B0500D0C421 /* User.swift */; };
 		9E4AF7D72752ADA700EAECC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AF7D62752ADA700EAECC3 /* AppDelegate.swift */; };
 		9E4AF7D92752ADA700EAECC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AF7D82752ADA700EAECC3 /* SceneDelegate.swift */; };
 		9E4AF7DB2752ADA700EAECC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AF7DA2752ADA700EAECC3 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8243E108275555AA00D0C421 /* UsersDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDB.swift; sourceTree = "<group>"; };
+		8243E10A27555B0500D0C421 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9E4AF7D32752ADA700EAECC3 /* TravelExperiences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelExperiences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E4AF7D62752ADA700EAECC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E4AF7D82752ADA700EAECC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				9E4AF7DF2752ADA800EAECC3 /* Assets.xcassets */,
 				9E4AF7E12752ADA800EAECC3 /* LaunchScreen.storyboard */,
 				9E4AF7E42752ADA800EAECC3 /* Info.plist */,
+				8243E108275555AA00D0C421 /* UsersDB.swift */,
+				8243E10A27555B0500D0C421 /* User.swift */,
 			);
 			path = TravelExperiences;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8243E109275555AB00D0C421 /* UsersDB.swift in Sources */,
 				9E4AF7DB2752ADA700EAECC3 /* ViewController.swift in Sources */,
 				9E4AF7D72752ADA700EAECC3 /* AppDelegate.swift in Sources */,
+				8243E10B27555B0500D0C421 /* User.swift in Sources */,
 				9E4AF7D92752ADA700EAECC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
