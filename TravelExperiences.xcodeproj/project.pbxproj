@@ -15,6 +15,8 @@
 		9E4AF7DE2752ADA700EAECC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AF7DC2752ADA700EAECC3 /* Main.storyboard */; };
 		9E4AF7E02752ADA800EAECC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AF7DF2752ADA800EAECC3 /* Assets.xcassets */; };
 		9E4AF7E32752ADA800EAECC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AF7E12752ADA800EAECC3 /* LaunchScreen.storyboard */; };
+		9EA92CA82755E7B200A53E64 /* ThingsToDoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */; };
+		9EA92CAA2755E8A100A53E64 /* ThingsToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		9E4AF7DF2752ADA800EAECC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E4AF7E22752ADA800EAECC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E4AF7E42752ADA800EAECC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoTableTableViewController.swift; sourceTree = "<group>"; };
+		9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				9E4AF7E42752ADA800EAECC3 /* Info.plist */,
 				8243E108275555AA00D0C421 /* UsersDB.swift */,
 				8243E10A27555B0500D0C421 /* User.swift */,
+				9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */,
+				9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */,
 			);
 			path = TravelExperiences;
 			sourceTree = "<group>";
@@ -145,6 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8243E109275555AB00D0C421 /* UsersDB.swift in Sources */,
+				9EA92CAA2755E8A100A53E64 /* ThingsToDoCell.swift in Sources */,
+				9EA92CA82755E7B200A53E64 /* ThingsToDoTableTableViewController.swift in Sources */,
 				9E4AF7DB2752ADA700EAECC3 /* ViewController.swift in Sources */,
 				9E4AF7D72752ADA700EAECC3 /* AppDelegate.swift in Sources */,
 				8243E10B27555B0500D0C421 /* User.swift in Sources */,
