@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var rememberMe: UISwitch!
@@ -25,22 +27,31 @@ class ViewController: UIViewController {
         // set defaults
         rememberMe.isOn = false
         invalidCredentials.isHidden = true
+        
+        // Getting isRememberMe object
+        let keyRememberMe = defaults.bool(forKey: "KEY_REMEMBER_ME")
+        print(keyRememberMe)
+        if keyRememberMe {
+            // redirect to second screen
+            print("qwe")
+        }
     }
 
 
     @IBAction func rememberMePressed(_ sender: UISwitch) {
         isRememberMe = sender.isOn
+        
     }
     
     @IBAction func signIn(_ sender: Any) {
         for user:User in UsersDB.shared.getUsersList() {
             if (email.text == user.getEmail() && password.text == user.getPassword()) {
-//                if (isRememberMeChecked) {
-//                    SharedPreferences.Editor prefEditor = this.preferences.edit();
-//                    prefEditor.putString("name", user.getName());
-//                    prefEditor.apply();
-//                }
-//                this.startHomePageIntent(user.getName());
+                if isRememberMe {
+                    defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
+                }
+                else {
+                    defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
+                }
                 print("Successfully Logged in")
                 invalidCredentials.isHidden = true
             }
