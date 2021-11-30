@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var rememberMe: UISwitch!
     @IBOutlet weak var invalidCredentials: UITextView!
+    @IBOutlet weak var showPasswordBtn: UIButton!
     
     var isRememberMe: Bool = false
     
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
         rememberMe.isOn = false
         invalidCredentials.isHidden = true
         
+        
         // Getting isRememberMe object
         let keyRememberMe = defaults.bool(forKey: "KEY_REMEMBER_ME")
         print(keyRememberMe)
@@ -36,36 +38,58 @@ class ViewController: UIViewController {
             print("qwe")
         }
     }
+    
+    func refresh() {
+        
+    }
 
 
     @IBAction func rememberMePressed(_ sender: UISwitch) {
         isRememberMe = sender.isOn
-        
     }
     
     @IBAction func signIn(_ sender: Any) {
-        for user:User in UsersDB.shared.getUsersList() {
-            if (email.text == user.getEmail() && password.text == user.getPassword()) {
-                if isRememberMe {
-                    defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
+        let emailValid = isValidEmail(email.text!)
+        if emailValid {
+            for user:User in UsersDB.shared.getUsersList() {
+                if (email.text == user.getEmail() && password.text == user.getPassword()) {
+                    if isRememberMe {
+                        defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
+                    }
+                    else {
+                        defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
+                    }
+                    print("Successfully Logged in")
+                    invalidCredentials.isHidden = true
                 }
                 else {
-                    defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
+                    invalidCredentials.text = "The email or password entered is incorrect. Please try again!"
+                    invalidCredentials.isHidden = false
                 }
-                print("Successfully Logged in")
-                invalidCredentials.isHidden = true
-            }
-            else {
-                invalidCredentials.isHidden = false
             }
         }
+        else {
+            invalidCredentials.text = "Please enter a valid email address"
+            invalidCredentials.isHidden = false
+        }
+    }
+    
+    @IBAction func showPassword(_ sender: UIButton) {
+        password.isSecureTextEntry = !password.isSecureTextEntry
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
     
     func populateUsers() {
         let user1 = User("Rahul", "rahul.vashist@georgebrown.ca", "GeorgeBrown")
         let user2 = User("Kamal", "kamal.singh@georgebrown.ca", "KamalSingh")
         let user3 = User("Test", "test.user@georgebrown.ca", "Test")
-        let user4 = User("A", "a", "a")
+        let user4 = User("A", "a@a.com", "a")
         
         UsersDB.shared.usersList.append(user1)
         UsersDB.shared.usersList.append(user2)
