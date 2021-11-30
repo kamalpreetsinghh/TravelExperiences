@@ -25,5 +25,11 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func addToFavs() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        let favsVC = storyboard.instantiateViewController(identifier: "Favourites") as! FavouritesViewController
+        
+        self.navigationController?.pushViewController(favsVC, animated: true)
+    }
 }
