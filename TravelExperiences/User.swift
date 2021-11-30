@@ -11,6 +11,7 @@ class User {
     var name: String
     var email: String
     var password: String
+    var favourites: [ThingsToDo] = []
     
     init(_ name: String, _ email: String, _ password: String) {
         self.name = name
@@ -24,5 +25,13 @@ class User {
     
     func getPassword() -> String {
         return self.password
+    }
+    
+    func getFavourites() -> [ThingsToDo] {
+        return self.favourites
+    }
+    
+    func setFavourites(favourites: [ThingsToDo]) {
+        self.favourites = favourites
     }
 }
