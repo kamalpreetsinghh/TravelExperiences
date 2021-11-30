@@ -36,6 +36,15 @@ class ThingsToDoTableTableViewController: UITableViewController {
         return cell
     }
     
+    //triggered when user clicks on any row
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailScreen = storyboard?.instantiateViewController(withIdentifier: "DetailScreen") as? DetailViewController else{
+            return
+        }
+        
+        self.navigationController?.pushViewController(detailScreen, animated: true)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

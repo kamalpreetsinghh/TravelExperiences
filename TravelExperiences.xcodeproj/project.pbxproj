@@ -19,6 +19,7 @@
 		9EA92CAA2755E8A100A53E64 /* ThingsToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */; };
 		9EA92CAD2755EDA400A53E64 /* ThingsToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */; };
 		9EA92CAF2755F0CE00A53E64 /* ThingsToDoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */; };
+		9EA92CB1275609AE00A53E64 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CB0275609AE00A53E64 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoCell.swift; sourceTree = "<group>"; };
 		9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDo.swift; sourceTree = "<group>"; };
 		9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoDB.swift; sourceTree = "<group>"; };
+		9EA92CB0275609AE00A53E64 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */,
 				9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */,
 				9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */,
+				9EA92CB0275609AE00A53E64 /* DetailViewController.swift */,
 			);
 			path = TravelExperiences;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				9E4AF7D72752ADA700EAECC3 /* AppDelegate.swift in Sources */,
 				8243E10B27555B0500D0C421 /* User.swift in Sources */,
 				9EA92CAF2755F0CE00A53E64 /* ThingsToDoDB.swift in Sources */,
+				9EA92CB1275609AE00A53E64 /* DetailViewController.swift in Sources */,
 				9EA92CAD2755EDA400A53E64 /* ThingsToDo.swift in Sources */,
 				9E4AF7D92752ADA700EAECC3 /* SceneDelegate.swift in Sources */,
 			);
