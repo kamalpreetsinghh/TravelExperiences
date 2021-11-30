@@ -17,6 +17,9 @@
 		9E4AF7E32752ADA800EAECC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AF7E12752ADA800EAECC3 /* LaunchScreen.storyboard */; };
 		9EA92CA82755E7B200A53E64 /* ThingsToDoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */; };
 		9EA92CAA2755E8A100A53E64 /* ThingsToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */; };
+		9EA92CAD2755EDA400A53E64 /* ThingsToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */; };
+		9EA92CAF2755F0CE00A53E64 /* ThingsToDoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */; };
+		9EA92CB1275609AE00A53E64 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CB0275609AE00A53E64 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		9E4AF7E42752ADA800EAECC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoTableTableViewController.swift; sourceTree = "<group>"; };
 		9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoCell.swift; sourceTree = "<group>"; };
+		9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDo.swift; sourceTree = "<group>"; };
+		9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoDB.swift; sourceTree = "<group>"; };
+		9EA92CB0275609AE00A53E64 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		9E4AF7D52752ADA700EAECC3 /* TravelExperiences */ = {
 			isa = PBXGroup;
 			children = (
+				9EA92CAB2755ED8700A53E64 /* Model */,
 				9E4AF7D62752ADA700EAECC3 /* AppDelegate.swift */,
 				9E4AF7D82752ADA700EAECC3 /* SceneDelegate.swift */,
 				9E4AF7DA2752ADA700EAECC3 /* ViewController.swift */,
@@ -75,8 +82,18 @@
 				8243E10A27555B0500D0C421 /* User.swift */,
 				9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */,
 				9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */,
+				9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */,
+				9EA92CB0275609AE00A53E64 /* DetailViewController.swift */,
 			);
 			path = TravelExperiences;
+			sourceTree = "<group>";
+		};
+		9EA92CAB2755ED8700A53E64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +173,9 @@
 				9E4AF7DB2752ADA700EAECC3 /* ViewController.swift in Sources */,
 				9E4AF7D72752ADA700EAECC3 /* AppDelegate.swift in Sources */,
 				8243E10B27555B0500D0C421 /* User.swift in Sources */,
+				9EA92CAF2755F0CE00A53E64 /* ThingsToDoDB.swift in Sources */,
+				9EA92CB1275609AE00A53E64 /* DetailViewController.swift in Sources */,
+				9EA92CAD2755EDA400A53E64 /* ThingsToDo.swift in Sources */,
 				9E4AF7D92752ADA700EAECC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
