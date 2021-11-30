@@ -2,48 +2,40 @@ import UIKit
 
 class ThingsToDoTableTableViewController: UITableViewController {
     
-    var thingsToDos = [ThingsToDo]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.rowHeight = 150
         // create things to do
-        createThingsToDos()
+        self.createThingsToDos()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return ThingsToDoDB.shared.thingsToDos.count
     }
     
-    func createThingsToDos() {
-        let thingsToDo1 = ThingsToDo(name: "Nighlife in Shinjuku", price: 150.00, img: "shinjuku")
-        let thingsToDo2 = ThingsToDo(name: "Cherry Blossoms Tour at Tokyo", price: 100.00, img: "cherryblossom")
-        let thingsToDo3 = ThingsToDo(name: "Food Tour at Kyoto", price: 250.00, img: "food")
-        let thingsToDo4 = ThingsToDo(name: "Tokyo Tower Tour", price: 120.00, img: "tokyotower")
-        
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo1)
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo2)
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo3)
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo4)
-    }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ThingsToDoCell", for: indexPath) as! ThingsToDoCell
 
         // Configure the cell...
-
+        let thingsToDo = ThingsToDoDB.shared.thingsToDos[indexPath.row]
+        print(thingsToDo.name)
+        cell.lblName.text = thingsToDo.name
+        cell.lblPrice.text = String(thingsToDo.price)
+        cell.imgPhoto.image = UIImage(named: thingsToDo.imageName)
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,5 +81,17 @@ class ThingsToDoTableTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func createThingsToDos() {
+        let thingsToDo1 = ThingsToDo(name: "Nighlife in Shinjuku", price: 150.00, img: "shinjuku")
+        let thingsToDo2 = ThingsToDo(name: "Cherry Blossoms Tour at Tokyo", price: 100.00, img: "cherryblossom")
+        let thingsToDo3 = ThingsToDo(name: "Food Tour at Kyoto", price: 250.00, img: "food")
+        let thingsToDo4 = ThingsToDo(name: "Tokyo Tower Tour", price: 120.00, img: "tokyotower")
+        
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo1)
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo2)
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo3)
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo4)
+    }
 
 }

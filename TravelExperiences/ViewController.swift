@@ -53,6 +53,7 @@ class ViewController: UIViewController {
                     defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
                 }
                 print("Successfully Logged in")
+                openThingsToDoScreen()
                 invalidCredentials.isHidden = true
             }
             else {
@@ -71,6 +72,14 @@ class ViewController: UIViewController {
         UsersDB.shared.usersList.append(user2)
         UsersDB.shared.usersList.append(user3)
         UsersDB.shared.usersList.append(user4)
+    }
+    
+    func openThingsToDoScreen () {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        let thingsToDoVC = storyboard.instantiateViewController(identifier: "ThingsToDo") as! ThingsToDoTableTableViewController
+        
+        self.navigationController?.pushViewController(thingsToDoVC, animated: true)
     }
 }
 
