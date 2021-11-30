@@ -1,9 +1,14 @@
 import UIKit
 
 class ThingsToDoTableTableViewController: UITableViewController {
+    
+    var thingsToDos = [ThingsToDo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // create things to do
+        createThingsToDos()
     }
 
     // MARK: - Table view data source
@@ -16,6 +21,18 @@ class ThingsToDoTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+    
+    func createThingsToDos() {
+        let thingsToDo1 = ThingsToDo(name: "Nighlife in Shinjuku", price: 150.00, img: "shinjuku")
+        let thingsToDo2 = ThingsToDo(name: "Cherry Blossoms Tour at Tokyo", price: 100.00, img: "cherryblossom")
+        let thingsToDo3 = ThingsToDo(name: "Food Tour at Kyoto", price: 250.00, img: "food")
+        let thingsToDo4 = ThingsToDo(name: "Tokyo Tower Tour", price: 120.00, img: "tokyotower")
+        
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo1)
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo2)
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo3)
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo4)
     }
 
     /*
