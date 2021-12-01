@@ -5,7 +5,7 @@ class ThingsToDoTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = 150
+        self.tableView.rowHeight = 155
         // create things to do
         self.createThingsToDos()
     }
@@ -20,15 +20,13 @@ class ThingsToDoTableTableViewController: UITableViewController {
         return ThingsToDoDB.shared.thingsToDos.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ThingsToDoCell", for: indexPath) as! ThingsToDoCell
 
         // Configure the cell...
         let thingsToDo = ThingsToDoDB.shared.thingsToDos[indexPath.row]
-        print(thingsToDo.name)
         cell.activityName.text = thingsToDo.name
-        cell.activityPrice.text = String(thingsToDo.price)
+        cell.activityPrice.text = "$\(thingsToDo.price)"
         cell.activityImage.image = UIImage(named: thingsToDo.images[0])
         
         return cell
@@ -39,6 +37,8 @@ class ThingsToDoTableTableViewController: UITableViewController {
         guard let detailScreen = storyboard?.instantiateViewController(withIdentifier: "DetailScreen") as? DetailViewController else{
             return
         }
+        
+        detailScreen.thingsToDo = ThingsToDoDB.shared.thingsToDos[indexPath.row]
         
         self.navigationController?.pushViewController(detailScreen, animated: true)
     }
@@ -54,15 +54,21 @@ class ThingsToDoTableTableViewController: UITableViewController {
     */
     
     func createThingsToDos() {
-        let thingsToDo1 = ThingsToDo(name: "Nighlife in Shinjuku", price: 150.00, images: ["shinjuku"], description: "", rating: 5)
-        let thingsToDo2 = ThingsToDo(name: "Cherry Blossoms Tour at Tokyo", price: 100.00, images: ["cherryblossom"], description: "", rating: 4)
-        let thingsToDo3 = ThingsToDo(name: "Food Tour at Kyoto", price: 250.00, images: ["food"], description: "", rating: 4)
-        let thingsToDo4 = ThingsToDo(name: "Tokyo Tower Tour", price: 120.00, images: ["tokyotower"], description: "", rating: 5)
+        let thingsToDo1 = ThingsToDo(name: "Nighlife in Shinjuku", price: 150.00, images: ["shinjuku", "shinjuku2"], description: "Shinjuku City encompasses the buzzing clubs and karaoke rooms of neon-lit East Shinjuku and upscale hotel bars and restaurants in the Skyscraper District. Tokyo Metropolitan Building has a popular observation deck, and Mount Hakone rises over tranquil urban parkland. Galleries, theaters, and bookstores attract students from busy campuses. ", rating: 5)
+        
+        let thingsToDo2 = ThingsToDo(name: "Cherry Blossoms Tour at Tokyo", price: 100.00, images: ["cherryblossom", "cherryblossom2"], description: "Cherry Blossom is a massive part of Japan's culture and history. In ancient Japan, farmers used the blooming of the cherry blossom flowers to help them know it was time to plant their rice crops. The flowers were considered to be a representation of spring, hope, beauty and new life.", rating: 4)
+        
+        let thingsToDo3 = ThingsToDo(name: "Food Tour at Kyoto", price: 250.00, images: ["food", "food2"], description: "The traditional cuisine of Japan is based on rice with miso soup and other dishes. There is an emphasis on seasonal ingredients. Side dishes often consist of fish, pickled vegetables, and vegetables cooked in broth. Seafood is common, often grilled, but also served raw as sashimi or in sushi.", rating: 4)
+        
+        let thingsToDo4 = ThingsToDo(name: "Tokyo Tower Tour", price: 120.00, images: ["tokyotower", "tokyotower2"], description: "The Tokyo Tower is a communications and observation tower in the Shiba-koen district of Minato, Tokyo, Japan, built in 1958. At 332.9 meters, it is the second-tallest structure in Japan.The structure is an Eiffel Tower-inspired lattice tower that is painted white and international orange to comply with air safety regulations.", rating: 5)
+        
+        let thingsToDo5 = ThingsToDo(name: "Mount Fuji Tour", price: 250.00, images: ["mountfuji", "mountfuji2"], description: "Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. A pilgrimage site for centuries, it’s considered one of Japan’s 3 sacred mountains, and summit hikes remain a popular activity. Its iconic profile is the subject of numerous works of art, notably Edo Period prints by Hokusai and Hiroshige.", rating: 5)
         
         ThingsToDoDB.shared.thingsToDos.append(thingsToDo1)
         ThingsToDoDB.shared.thingsToDos.append(thingsToDo2)
         ThingsToDoDB.shared.thingsToDos.append(thingsToDo3)
         ThingsToDoDB.shared.thingsToDos.append(thingsToDo4)
+        ThingsToDoDB.shared.thingsToDos.append(thingsToDo5)
     }
 
 }
