@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lRg-zS-g1r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lRg-zS-g1r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -206,6 +206,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityImage" destination="OMR-Xi-ugd" id="tdo-H7-7l3"/>
+                                    <outlet property="activityName" destination="Sap-Ia-T1q" id="i4h-SF-6e1"/>
+                                    <outlet property="activityPrice" destination="wii-FP-MjP" id="GO7-yy-T6n"/>
                                     <outlet property="imgPhoto" destination="OMR-Xi-ugd" id="B8Y-1g-VKY"/>
                                     <outlet property="lblName" destination="Sap-Ia-T1q" id="wPI-Tj-Vj8"/>
                                     <outlet property="lblPrice" destination="wii-FP-MjP" id="qPv-43-YrI"/>

@@ -1,19 +1,25 @@
 import Foundation
 
 struct ThingsToDo {
-    var name: String
-    var price: Double
-    var imageName : String
+    let name: String
+    let price: Double
+    let images : [String]
+    let description: String
+    let rating: Int
     
     init() {
         self.name = "Unknown"
         self.price = 0.0
-        self.imageName = "charizard.png"
+        self.images = ["shinjuku.png"]
+        self.description = ""
+        self.rating = 0
     }
     
-    init (name: String, price: Double, img: String) {
+    init (name: String, price: Double, images: [String], description: String, rating: Int) {
         self.name = name
         self.price = price
-        self.imageName = img
+        self.images = images
+        self.description = description
+        self.rating = rating
     }
 }

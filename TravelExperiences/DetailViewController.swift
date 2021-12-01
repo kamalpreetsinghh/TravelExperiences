@@ -1,10 +1,3 @@
-//
-//  DetailViewController.swift
-//  TravelExperiences
-//
-//  Created by Karan on 2021-11-30.
-//
-
 import UIKit
 
 class DetailViewController: UIViewController {
@@ -12,7 +5,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
