@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imgRating3: UIImageView!
     @IBOutlet weak var imgRating4: UIImageView!
     @IBOutlet weak var imgRating5: UIImageView!
+    @IBOutlet weak var contactNumber: UILabel!
     
     let YELLOW_STAR = "yellowstar"
     let WHITE_STAR = "whitestar"
@@ -35,6 +36,7 @@ class DetailViewController: UIViewController {
             self.firstImage.image = UIImage(named: "shinjuku")
             self.secondImage.image = UIImage(named: "shinjuku2")
             self.activityPrice.text = "$0.00"
+            self.contactNumber.text = "(999) 999-9999"
             return
         }
         
@@ -45,6 +47,7 @@ class DetailViewController: UIViewController {
         self.firstImage.image = UIImage(named: receivedThingsToDo.images[0])
         self.secondImage.image = UIImage(named: receivedThingsToDo.images[1])
         self.activityPrice.text = "$\(receivedThingsToDo.price)"
+        self.contactNumber.text = receivedThingsToDo.contactNumber
         self.imgRating1.image = UIImage(named: starRatingImages[0])
         self.imgRating2.image = UIImage(named: starRatingImages[1])
         self.imgRating3.image = UIImage(named: starRatingImages[2])

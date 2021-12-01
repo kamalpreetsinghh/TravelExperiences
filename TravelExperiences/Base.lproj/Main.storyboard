@@ -298,6 +298,13 @@
                                 <rect key="frame" x="299" y="554" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGb-vt-CNt">
+                                <rect key="frame" x="41" y="668" width="236" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cOh-zz-cdy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -306,6 +313,7 @@
                         <outlet property="activityDescription" destination="3Q8-bV-Ivf" id="pBG-Va-fzw"/>
                         <outlet property="activityName" destination="SWn-d7-hLk" id="rd4-Np-usV"/>
                         <outlet property="activityPrice" destination="ab4-cV-3qN" id="qq3-cF-DsL"/>
+                        <outlet property="contactNumber" destination="CGb-vt-CNt" id="cM8-iL-Nam"/>
                         <outlet property="firstImage" destination="UD6-0l-UlE" id="6dD-zz-DkF"/>
                         <outlet property="imgRating1" destination="ZtW-lp-OEi" id="ygE-SL-a2d"/>
                         <outlet property="imgRating2" destination="HY3-cI-ssh" id="sjU-Ns-cjs"/>
