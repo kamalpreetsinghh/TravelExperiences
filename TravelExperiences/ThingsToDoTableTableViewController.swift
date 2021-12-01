@@ -5,7 +5,7 @@ class ThingsToDoTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = 155
+        self.tableView.rowHeight = 158
         // create things to do
         self.createThingsToDos()
     }
