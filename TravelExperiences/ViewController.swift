@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         print(keyRememberMe)
         if keyRememberMe {
             // redirect to second screen
-            print("qwe")
+            openThingsToDoScreen()
         }
     }
     

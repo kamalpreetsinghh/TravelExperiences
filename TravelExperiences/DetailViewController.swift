@@ -32,4 +32,14 @@ class DetailViewController: UIViewController {
         
         self.navigationController?.pushViewController(favsVC, animated: true)
     }
+
+    @IBAction func callBtn(_ sender: Any) {
+        if let phoneCallURL = URL(string: "tel://\(123-123-1234)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
 }
