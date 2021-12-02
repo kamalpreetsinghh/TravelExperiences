@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         rememberMe.isOn = false
         invalidCredentials.isHidden = true
         
-        
+        UserDefaults.standard.set(false, forKey: "KEY_REMEMBER_ME")
         // Getting isRememberMe object
         let keyRememberMe = defaults.bool(forKey: "KEY_REMEMBER_ME")
         print(keyRememberMe)
