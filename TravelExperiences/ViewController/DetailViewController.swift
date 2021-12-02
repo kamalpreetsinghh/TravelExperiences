@@ -10,12 +10,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var activityDescription: UITextView!
-    @IBOutlet weak var imgRating1: UIImageView!
-    @IBOutlet weak var imgRating2: UIImageView!
-    @IBOutlet weak var imgRating3: UIImageView!
-    @IBOutlet weak var imgRating4: UIImageView!
-    @IBOutlet weak var imgRating5: UIImageView!
+    
+//    @IBOutlet weak var imgRating1: UIImageView!
+//    @IBOutlet weak var imgRating2: UIImageView!
+//    @IBOutlet weak var imgRating3: UIImageView!
+//    @IBOutlet weak var imgRating4: UIImageView!
+//    @IBOutlet weak var imgRating5: UIImageView!
+    
     @IBOutlet weak var contactNumber: UILabel!
+    @IBOutlet weak var ratings: UISlider!
     
     let YELLOW_STAR = "yellowstar"
     let WHITE_STAR = "whitestar"
@@ -37,10 +40,11 @@ class DetailViewController: UIViewController {
             self.secondImage.image = UIImage(named: "shinjuku2")
             self.activityPrice.text = "$0.00"
             self.contactNumber.text = "(999) 999-9999"
+            self.ratings.value = 0.0
             return
         }
         
-        getRatingImages(rating: receivedThingsToDo.rating)
+//        getRatingImages(rating: receivedThingsToDo.rating)
         
         self.activityName.text = receivedThingsToDo.name
         self.activityDescription.text = receivedThingsToDo.description
@@ -48,11 +52,13 @@ class DetailViewController: UIViewController {
         self.secondImage.image = UIImage(named: receivedThingsToDo.images[1])
         self.activityPrice.text = "$\(receivedThingsToDo.price)"
         self.contactNumber.text = receivedThingsToDo.contactNumber
-        self.imgRating1.image = UIImage(named: starRatingImages[0])
-        self.imgRating2.image = UIImage(named: starRatingImages[1])
-        self.imgRating3.image = UIImage(named: starRatingImages[2])
-        self.imgRating4.image = UIImage(named: starRatingImages[3])
-        self.imgRating5.image = UIImage(named: starRatingImages[4])
+        self.ratings.value = receivedThingsToDo.rating
+        
+//        self.imgRating1.image = UIImage(named: starRatingImages[0])
+//        self.imgRating2.image = UIImage(named: starRatingImages[1])
+//        self.imgRating3.image = UIImage(named: starRatingImages[2])
+//        self.imgRating4.image = UIImage(named: starRatingImages[3])
+//        self.imgRating5.image = UIImage(named: starRatingImages[4])
         
     }
     
@@ -65,35 +71,39 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func share(_ sender: Any) {
-        let activityController = UIActivityViewController(activityItems: [activityName.text], applicationActivities:  nil)
+        let activityController = UIActivityViewController(activityItems: [activityName.text!], applicationActivities:  nil)
         present(activityController, animated: true, completion: nil)
     }
     
-    @IBAction func buyActivity(_ sender: Any) {
-        guard let receivedThingsToDo = self.thingsToDo else {
-            return
-        }
+    @IBAction func buyItem(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        UsersDB.shared.currentUser.purchasedActivities.append(receivedThingsToDo)
+        let purchaseVC = storyboard.instantiateViewController(identifier: "PurchaseScreen") as! PurchasedTicketsViewController
         
-        let alert = UIAlertController(title: "Item Purchased", message: "You have purchased \(receivedThingsToDo.name)", preferredStyle: .alert)
+        purchaseVC.thingsToDo = self.thingsToDo
         
-        let okAction = UIAlertAction(title:"OK", style: .default, handler: {(alert:UIAlertAction!)-> Void in})
-        alert.addAction(okAction)
-        
-        self.present(alert, animated:true, completion:nil)
+        self.navigationController?.pushViewController(purchaseVC, animated: true)
     }
     
-    private func getRatingImages (rating: Int) {
-        for _ in 1...rating {
-            starRatingImages.append(YELLOW_STAR)
-        }
-        if rating < MAX_RATING {
-            for _ in rating+1...MAX_RATING {
-                starRatingImages.append(WHITE_STAR)
-            }
-        }
+    @IBAction func viewTickets(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        let ticketsVC = storyboard.instantiateViewController(identifier: "purchasedticketscreen") as! TicketsTableViewController
+                
+        self.navigationController?.pushViewController(ticketsVC, animated: true)
     }
+    
+    
+//    private func getRatingImages (rating: Int) {
+//        for _ in 1...rating {
+//            starRatingImages.append(YELLOW_STAR)
+//        }
+//        if rating < MAX_RATING {
+//            for _ in rating+1...MAX_RATING {
+//                starRatingImages.append(WHITE_STAR)
+//            }
+//        }
+//    }
     
    
 }

@@ -11,6 +11,9 @@
 		8243E10B27555B0500D0C421 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243E10A27555B0500D0C421 /* User.swift */; };
 		8243E10D2756220B00D0C421 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243E10C2756220B00D0C421 /* FavouritesViewController.swift */; };
 		9E43E56D27584FC300FA3F6A /* PurchasedTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43E56C27584FC300FA3F6A /* PurchasedTicketsViewController.swift */; };
+		9E43E56F27588F7C00FA3F6A /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43E56E27588F7C00FA3F6A /* Ticket.swift */; };
+		9E43E5712758944200FA3F6A /* TicketsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43E5702758944200FA3F6A /* TicketsTableViewController.swift */; };
+		9E43E5772758965200FA3F6A /* TicketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43E5762758965200FA3F6A /* TicketViewCell.swift */; };
 		9E4AF7D72752ADA700EAECC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AF7D62752ADA700EAECC3 /* AppDelegate.swift */; };
 		9E4AF7D92752ADA700EAECC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AF7D82752ADA700EAECC3 /* SceneDelegate.swift */; };
 		9E4AF7DB2752ADA700EAECC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AF7DA2752ADA700EAECC3 /* ViewController.swift */; };
@@ -29,6 +32,9 @@
 		8243E10A27555B0500D0C421 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8243E10C2756220B00D0C421 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		9E43E56C27584FC300FA3F6A /* PurchasedTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedTicketsViewController.swift; sourceTree = "<group>"; };
+		9E43E56E27588F7C00FA3F6A /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		9E43E5702758944200FA3F6A /* TicketsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsTableViewController.swift; sourceTree = "<group>"; };
+		9E43E5762758965200FA3F6A /* TicketViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewCell.swift; sourceTree = "<group>"; };
 		9E4AF7D32752ADA700EAECC3 /* TravelExperiences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelExperiences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E4AF7D62752ADA700EAECC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E4AF7D82752ADA700EAECC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 				9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */,
 				8243E10C2756220B00D0C421 /* FavouritesViewController.swift */,
 				9E43E56C27584FC300FA3F6A /* PurchasedTicketsViewController.swift */,
+				9E43E5702758944200FA3F6A /* TicketsTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 				9E4AF7E12752ADA800EAECC3 /* LaunchScreen.storyboard */,
 				9E4AF7E42752ADA800EAECC3 /* Info.plist */,
 				9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */,
+				9E43E5762758965200FA3F6A /* TicketViewCell.swift */,
 			);
 			path = TravelExperiences;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 			children = (
 				8243E10A27555B0500D0C421 /* User.swift */,
 				9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */,
+				9E43E56E27588F7C00FA3F6A /* Ticket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,9 +202,12 @@
 				8243E109275555AB00D0C421 /* UsersDB.swift in Sources */,
 				9EA92CAA2755E8A100A53E64 /* ThingsToDoCell.swift in Sources */,
 				9EA92CA82755E7B200A53E64 /* ThingsToDoTableTableViewController.swift in Sources */,
+				9E43E5772758965200FA3F6A /* TicketViewCell.swift in Sources */,
 				8243E10D2756220B00D0C421 /* FavouritesViewController.swift in Sources */,
 				9E4AF7DB2752ADA700EAECC3 /* ViewController.swift in Sources */,
+				9E43E56F27588F7C00FA3F6A /* Ticket.swift in Sources */,
 				9E4AF7D72752ADA700EAECC3 /* AppDelegate.swift in Sources */,
+				9E43E5712758944200FA3F6A /* TicketsTableViewController.swift in Sources */,
 				8243E10B27555B0500D0C421 /* User.swift in Sources */,
 				9EA92CAF2755F0CE00A53E64 /* ThingsToDoDB.swift in Sources */,
 				9EA92CB1275609AE00A53E64 /* DetailViewController.swift in Sources */,
