@@ -56,16 +56,6 @@ class DetailViewController: UIViewController {
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     func addToFavs() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
@@ -74,7 +64,16 @@ class DetailViewController: UIViewController {
         self.navigationController?.pushViewController(favsVC, animated: true)
     }
     
-    func getRatingImages (rating: Int) {
+    @IBAction func share(_ sender: Any) {
+        let activityController = UIActivityViewController(activityItems: [self], applicationActivities:  nil)
+        present(activityController, animated: true, completion: nil)
+    }
+    
+    @IBAction func buyActivity(_ sender: Any) {
+        
+    }
+    
+    private func getRatingImages (rating: Int) {
         for _ in 1...rating {
             starRatingImages.append(YELLOW_STAR)
         }
@@ -86,3 +85,4 @@ class DetailViewController: UIViewController {
     }
     
 }
+

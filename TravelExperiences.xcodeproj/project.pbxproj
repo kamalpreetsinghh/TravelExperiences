@@ -53,6 +53,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E43E56A2758432800FA3F6A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9E4AF7DA2752ADA700EAECC3 /* ViewController.swift */,
+				9EA92CB0275609AE00A53E64 /* DetailViewController.swift */,
+				9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */,
+				8243E10C2756220B00D0C421 /* FavouritesViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9E43E56B2758436A00FA3F6A /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */,
+				8243E108275555AA00D0C421 /* UsersDB.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		9E4AF7CA2752ADA600EAECC3 = {
 			isa = PBXGroup;
 			children = (
@@ -72,21 +92,16 @@
 		9E4AF7D52752ADA700EAECC3 /* TravelExperiences */ = {
 			isa = PBXGroup;
 			children = (
+				9E43E56B2758436A00FA3F6A /* DataSource */,
+				9E43E56A2758432800FA3F6A /* ViewController */,
 				9EA92CAB2755ED8700A53E64 /* Model */,
 				9E4AF7D62752ADA700EAECC3 /* AppDelegate.swift */,
 				9E4AF7D82752ADA700EAECC3 /* SceneDelegate.swift */,
-				9E4AF7DA2752ADA700EAECC3 /* ViewController.swift */,
 				9E4AF7DC2752ADA700EAECC3 /* Main.storyboard */,
 				9E4AF7DF2752ADA800EAECC3 /* Assets.xcassets */,
 				9E4AF7E12752ADA800EAECC3 /* LaunchScreen.storyboard */,
 				9E4AF7E42752ADA800EAECC3 /* Info.plist */,
-				8243E108275555AA00D0C421 /* UsersDB.swift */,
-				8243E10A27555B0500D0C421 /* User.swift */,
-				9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */,
 				9EA92CA92755E8A100A53E64 /* ThingsToDoCell.swift */,
-				9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */,
-				9EA92CB0275609AE00A53E64 /* DetailViewController.swift */,
-				8243E10C2756220B00D0C421 /* FavouritesViewController.swift */,
 			);
 			path = TravelExperiences;
 			sourceTree = "<group>";
@@ -94,6 +109,7 @@
 		9EA92CAB2755ED8700A53E64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8243E10A27555B0500D0C421 /* User.swift */,
 				9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */,
 			);
 			path = Model;
