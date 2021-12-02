@@ -1,13 +1,13 @@
 //
-//  DetailViewController.swift
+//  PurchasedTicketsViewController.swift
 //  TravelExperiences
 //
-//  Created by Karan on 2021-11-30.
+//  Created by Karan on 2021-12-01.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class PurchasedTicketsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

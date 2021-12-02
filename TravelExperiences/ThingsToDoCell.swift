@@ -2,10 +2,10 @@ import UIKit
 
 class ThingsToDoCell: UITableViewCell {
 
-    @IBOutlet var lblPrice : UILabel!
-    @IBOutlet var lblName: UILabel!
+    @IBOutlet weak var activityName: UILabel!
+    @IBOutlet weak var activityPrice: UILabel!
+    @IBOutlet weak var activityImage: UIImageView!
     
-    @IBOutlet weak var imgPhoto: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
