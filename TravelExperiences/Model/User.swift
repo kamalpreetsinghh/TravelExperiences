@@ -8,10 +8,17 @@
 import Foundation
 
 class User {
-    var name: String
-    var email: String
-    var password: String
+    let name: String
+    let email: String
+    let password: String
     var favourites: [ThingsToDo] = []
+    var purchasedActivities: [ThingsToDo] = []
+    
+    init () {
+        self.name = ""
+        self.email = ""
+        self.password = ""
+    }
     
     init(_ name: String, _ email: String, _ password: String) {
         self.name = name
@@ -33,5 +40,13 @@ class User {
     
     func setFavourites(favourites: [ThingsToDo]) {
         self.favourites = favourites
+    }
+    
+    func getPurchasedActivities() -> [ThingsToDo] {
+        return self.purchasedActivities
+    }
+    
+    func setPurchasedActivities(purchasedActivities: [ThingsToDo]) {
+        self.purchasedActivities = purchasedActivities
     }
 }

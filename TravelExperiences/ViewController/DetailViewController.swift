@@ -65,12 +65,23 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func share(_ sender: Any) {
-        let activityController = UIActivityViewController(activityItems: [self], applicationActivities:  nil)
+        let activityController = UIActivityViewController(activityItems: [activityName.text], applicationActivities:  nil)
         present(activityController, animated: true, completion: nil)
     }
     
     @IBAction func buyActivity(_ sender: Any) {
+        guard let receivedThingsToDo = self.thingsToDo else {
+            return
+        }
         
+        UsersDB.shared.currentUser.purchasedActivities.append(receivedThingsToDo)
+        
+        let alert = UIAlertController(title: "Item Purchased", message: "You have purchased \(receivedThingsToDo.name)", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title:"OK", style: .default, handler: {(alert:UIAlertAction!)-> Void in})
+        alert.addAction(okAction)
+        
+        self.present(alert, animated:true, completion:nil)
     }
     
     private func getRatingImages (rating: Int) {
@@ -84,5 +95,6 @@ class DetailViewController: UIViewController {
         }
     }
     
+   
 }
 

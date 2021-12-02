@@ -18,6 +18,8 @@ class UsersDB {
     // resource the singleton should manage
     var usersList: [User] = []
     
+    var currentUser: User = User()
+    
     func getUsersList() -> [User] {
         return self.usersList
     }

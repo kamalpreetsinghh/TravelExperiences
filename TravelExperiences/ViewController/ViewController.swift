@@ -61,6 +61,7 @@ class ViewController: UIViewController {
                     }
                     print("Successfully Logged in")
                     openThingsToDoScreen()
+                    UsersDB.shared.currentUser = user
                     invalidCredentials.isHidden = true
                 }
                 else {
