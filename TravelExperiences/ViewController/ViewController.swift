@@ -35,27 +35,12 @@ class ViewController: UIViewController {
         // set defaults
         rememberMe.isOn = false
         invalidCredentials.isHidden = true
-        
-        // user defaults for favourites
-//        UserDefaults.standard.set(
-        
-        
-        
-        UserDefaults.standard.set(false, forKey: "KEY_REMEMBER_ME")
-        // Getting isRememberMe object
-        let keyRememberMe = defaults.bool(forKey: "KEY_REMEMBER_ME")
-        print(keyRememberMe)
-        if keyRememberMe {
-            // redirect to second screen
-            openThingsToDoScreen()
-        }
+        email.text = ""
+        password.text = ""
+        print("Hello")
+        loginIfRememberMe()
     }
     
-    func refresh() {
-        
-    }
-
-
     @IBAction func rememberMePressed(_ sender: UISwitch) {
         isRememberMe = sender.isOn
     }
@@ -67,11 +52,12 @@ class ViewController: UIViewController {
                 if (email.text == user.getEmail() && password.text == user.getPassword()) {
                     
                     if isRememberMe {
-                        defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
+                        defaults.set(user.email, forKey: "KEY_REMEMBER_ME")
                     }
                     else if email.text != user.getEmail() && password.text != user.getPassword() {
-                        defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
+                        defaults.set("", forKey: "KEY_REMEMBER_ME")
                     }
+                    
                     print("Successfully Logged in")
                     openThingsToDoScreen()
                     UsersDB.shared.currentUser = user
@@ -93,14 +79,14 @@ class ViewController: UIViewController {
         password.isSecureTextEntry = !password.isSecureTextEntry
     }
     
-    func isValidEmail(_ email: String) -> Bool {
+    private func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
     
-    func populateUsers() {
+    private func populateUsers() {
         let user1 = User("Rahul", "rahul.vashist@georgebrown.ca", "GeorgeBrown")
         let user2 = User("Kamal", "kamal.singh@georgebrown.ca", "KamalSingh")
         let user3 = User("Test", "test.user@georgebrown.ca", "Test")
@@ -112,12 +98,27 @@ class ViewController: UIViewController {
         UsersDB.shared.usersList.append(user4)
     }
     
-    func openThingsToDoScreen () {
+    private func openThingsToDoScreen () {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         let thingsToDoVC = storyboard.instantiateViewController(identifier: "ThingsToDo") as! ThingsToDoTableTableViewController
         
         self.navigationController?.pushViewController(thingsToDoVC, animated: true)
     }
+    
+    private func loginIfRememberMe () {
+        let rememberMeUser = defaults.string(forKey: "KEY_REMEMBER_ME")
+        
+        if !(rememberMeUser?.isEmpty ?? true) {
+            for user:User in UsersDB.shared.getUsersList() {
+                if (rememberMeUser == user.getEmail()) {
+                    openThingsToDoScreen()
+                    UsersDB.shared.currentUser = user
+                    invalidCredentials.isHidden = true
+                }
+            }
+        }
+    }
+    
 }
 
