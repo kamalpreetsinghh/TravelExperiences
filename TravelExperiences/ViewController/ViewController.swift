@@ -51,20 +51,15 @@ class ViewController: UIViewController {
             for user:User in UsersDB.shared.getUsersList() {
                 if (email.text == user.getEmail() && password.text == user.getPassword()) {
                     
-                    let userinfo = UserInfo()
-                    userinfo.email = email.text!
-                    userinfo.isRememberMe = isRememberMe
-                    userinfo.isLoggedIn = true
-//                    userinfo.favouritesList = []
-                    
                     if isRememberMe {
                         defaults.set(user.email, forKey: "KEY_REMEMBER_ME")
                     }
-                    else {
+                    else if email.text != user.getEmail() && password.text != user.getPassword() {
                         defaults.set("", forKey: "KEY_REMEMBER_ME")
                     }
                     
                     print("Successfully Logged in")
+                    clearData()
                     openThingsToDoScreen()
                     UsersDB.shared.currentUser = user
                     invalidCredentials.isHidden = true
@@ -79,6 +74,12 @@ class ViewController: UIViewController {
             invalidCredentials.text = "Please enter a valid email address"
             invalidCredentials.isHidden = false
         }
+        
+    }
+    
+    func clearData() {
+        email.text = ""
+        password.text = ""
     }
     
     @IBAction func showPassword(_ sender: UIButton) {

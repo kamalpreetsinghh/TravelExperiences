@@ -57,13 +57,9 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func addToFav(_ sender: Any) {
-        var favList = UserDefaults.standard.array(forKey: "\(UsersDB.shared.currentUser.name).favorites") as? [String] ?? [String]()
-        favList.append(thingsToDo!.name)
-        
-        UserDefaults.standard.set(favList, forKey: "\(UsersDB.shared.currentUser.name).favorites")
-        
-        print(UserDefaults.standard.array(forKey:"\(UsersDB.shared.currentUser.name).favorites"))
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let favs = storyboard.instantiateViewController(withIdentifier: "FavouritesTableView") as! FavouritesTableViewController
+        self.navigationController?.pushViewController(favs, animated: true)
     }
     
     @IBAction func share(_ sender: Any) {
@@ -101,9 +97,12 @@ class DetailViewController: UIViewController {
         }
     }
     @IBAction func goToFavourites(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let favs = storyboard.instantiateViewController(withIdentifier: "FavouritesTableView") as! FavouritesTableViewController
-        self.navigationController?.pushViewController(favs, animated: true)
+        var favList = UserDefaults.standard.array(forKey: "\(UsersDB.shared.currentUser.name).favorites") as? [String] ?? [String]()
+        favList.append(thingsToDo!.name)
+        
+        UserDefaults.standard.set(favList, forKey: "\(UsersDB.shared.currentUser.name).favorites")
+        
+        print(UserDefaults.standard.array(forKey:"\(UsersDB.shared.currentUser.name).favorites"))
     }
     
     @IBAction func viewTickets(_ sender: Any) {
