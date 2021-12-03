@@ -7,6 +7,13 @@
 
 import UIKit
 
+class UserInfo {
+    var email:String = ""
+    var isRememberMe: Bool = false
+    var isLoggedIn: Bool = false
+    var favouritesList: [ThingsToDo] = []
+}
+
 class ViewController: UIViewController {
 
     let defaults = UserDefaults.standard
@@ -28,6 +35,11 @@ class ViewController: UIViewController {
         // set defaults
         rememberMe.isOn = false
         invalidCredentials.isHidden = true
+        
+        // user defaults for favourites
+//        UserDefaults.standard.set(
+        
+        
         
         UserDefaults.standard.set(false, forKey: "KEY_REMEMBER_ME")
         // Getting isRememberMe object
@@ -53,6 +65,19 @@ class ViewController: UIViewController {
         if emailValid {
             for user:User in UsersDB.shared.getUsersList() {
                 if (email.text == user.getEmail() && password.text == user.getPassword()) {
+                    
+                    let userinfo = UserInfo()
+                    userinfo.email = email.text!
+                    userinfo.isRememberMe = isRememberMe
+                    userinfo.isLoggedIn = true
+//                    userinfo.favouritesList = []
+                    
+                    var userArr = defaults.dictionary(forKey: "KEY_USER_INFO")
+                    var a:[String: UserInfo] = [userinfo.email: userinfo]
+//                    defaults.set(a, forKey: "KEY_USER_INFO")
+                    
+                    userArr = defaults.dictionary(forKey: "KEY_USER_INFO")
+                    print(userArr!)
                     if isRememberMe {
                         defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
                     }
