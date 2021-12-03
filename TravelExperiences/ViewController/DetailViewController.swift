@@ -57,11 +57,10 @@ class DetailViewController: UIViewController {
     }
     
     func addToFavs() {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var favList = UserDefaults.standard.array(forKey: "\(UsersDB.shared.currentUser.name).favorites") as? [String] ?? [String]()
+        favList.append(thingsToDo!.name)
         
-        let favsVC = storyboard.instantiateViewController(identifier: "Favourites") as! FavouritesViewController
-        
-        self.navigationController?.pushViewController(favsVC, animated: true)
+        UserDefaults.standard.set(favList, forKey: "\(UsersDB.shared.currentUser.name).favorites")
     }
     
     @IBAction func share(_ sender: Any) {
