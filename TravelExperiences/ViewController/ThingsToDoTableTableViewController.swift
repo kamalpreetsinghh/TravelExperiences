@@ -6,6 +6,10 @@ class ThingsToDoTableTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.rowHeight = 158
+        self.navigationItem.title = "Things to do in Tokyo"
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Favourites", style: .plain, target: self, action: #selector(goToFavourites))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
         // create things to do
         self.createThingsToDos()
     }
@@ -69,6 +73,14 @@ class ThingsToDoTableTableViewController: UITableViewController {
         ThingsToDoDB.shared.thingsToDos.append(thingsToDo3)
         ThingsToDoDB.shared.thingsToDos.append(thingsToDo4)
         ThingsToDoDB.shared.thingsToDos.append(thingsToDo5)
+    }
+    
+    @IBAction func goToFavourites(_ sender: Any) {
+        
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        
     }
 
 }
