@@ -76,7 +76,9 @@ class ThingsToDoTableTableViewController: UITableViewController {
     }
     
     @IBAction func goToFavourites(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let favs = storyboard.instantiateViewController(withIdentifier: "FavouritesTableView") as! FavouritesTableViewController
+        self.navigationController?.pushViewController(favs, animated: true)
     }
     
     @IBAction func logout(_ sender: Any) {
