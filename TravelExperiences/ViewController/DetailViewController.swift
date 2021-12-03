@@ -59,9 +59,9 @@ class DetailViewController: UIViewController {
     func addToFavs() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        let favsVC = storyboard.instantiateViewController(identifier: "Favourites") as! FavouritesViewController
-        
-        self.navigationController?.pushViewController(favsVC, animated: true)
+//        let favsVC = storyboard.instantiateViewController(identifier: "Favourites") as! FavouritesViewController
+//
+//        self.navigationController?.pushViewController(favsVC, animated: true)
     }
     
     @IBAction func share(_ sender: Any) {
