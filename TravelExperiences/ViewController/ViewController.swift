@@ -59,6 +59,7 @@ class ViewController: UIViewController {
                     }
                     
                     print("Successfully Logged in")
+                    clearData()
                     openThingsToDoScreen()
                     UsersDB.shared.currentUser = user
                     invalidCredentials.isHidden = true
@@ -73,6 +74,12 @@ class ViewController: UIViewController {
             invalidCredentials.text = "Please enter a valid email address"
             invalidCredentials.isHidden = false
         }
+        
+    }
+    
+    func clearData() {
+        email.text = ""
+        password.text = ""
     }
     
     @IBAction func showPassword(_ sender: UIButton) {
