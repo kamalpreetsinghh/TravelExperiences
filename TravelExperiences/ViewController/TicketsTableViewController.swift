@@ -33,7 +33,6 @@ class TicketsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ticketrow", for: indexPath) as! TicketViewCell
         let ticket = UsersDB.shared.currentUser.tickets[indexPath.row]
-        cell.customerName.text = ticket.customerName
         cell.activityPrice.text = "$\(ticket.totalPrice)"
         cell.activityName.text = ticket.thingsToDo.name
         cell.numberOfTickets.text = "\(ticket.ticketCount)"

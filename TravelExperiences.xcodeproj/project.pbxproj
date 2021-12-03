@@ -23,6 +23,9 @@
 		9EA92CAD2755EDA400A53E64 /* ThingsToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */; };
 		9EA92CAF2755F0CE00A53E64 /* ThingsToDoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */; };
 		9EA92CB1275609AE00A53E64 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA92CB0275609AE00A53E64 /* DetailViewController.swift */; };
+		9ED1D7D1275A0C8200C51C89 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED1D7D0275A0C8100C51C89 /* Ticket.swift */; };
+		9ED1D7D3275A0CA000C51C89 /* TicketsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED1D7D2275A0CA000C51C89 /* TicketsTableViewController.swift */; };
+		9ED1D7D5275A0D1200C51C89 /* TicketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED1D7D4275A0D1200C51C89 /* TicketViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDo.swift; sourceTree = "<group>"; };
 		9EA92CAE2755F0CE00A53E64 /* ThingsToDoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoDB.swift; sourceTree = "<group>"; };
 		9EA92CB0275609AE00A53E64 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9ED1D7D0275A0C8100C51C89 /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		9ED1D7D2275A0CA000C51C89 /* TicketsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsTableViewController.swift; sourceTree = "<group>"; };
+		9ED1D7D4275A0D1200C51C89 /* TicketViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		9E43E56A2758432800FA3F6A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9ED1D7D2275A0CA000C51C89 /* TicketsTableViewController.swift */,
 				9E4AF7DA2752ADA700EAECC3 /* ViewController.swift */,
 				9EA92CB0275609AE00A53E64 /* DetailViewController.swift */,
 				9EA92CA72755E7B200A53E64 /* ThingsToDoTableTableViewController.swift */,
@@ -98,6 +105,7 @@
 		9E4AF7D52752ADA700EAECC3 /* TravelExperiences */ = {
 			isa = PBXGroup;
 			children = (
+				9ED1D7D4275A0D1200C51C89 /* TicketViewCell.swift */,
 				9E43E56B2758436A00FA3F6A /* DataSource */,
 				9E43E56A2758432800FA3F6A /* ViewController */,
 				9EA92CAB2755ED8700A53E64 /* Model */,
@@ -115,6 +123,7 @@
 		9EA92CAB2755ED8700A53E64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9ED1D7D0275A0C8100C51C89 /* Ticket.swift */,
 				8243E10A27555B0500D0C421 /* User.swift */,
 				9EA92CAC2755EDA400A53E64 /* ThingsToDo.swift */,
 			);
@@ -196,7 +205,9 @@
 				8243E109275555AB00D0C421 /* UsersDB.swift in Sources */,
 				9EA92CAA2755E8A100A53E64 /* ThingsToDoCell.swift in Sources */,
 				9EA92CA82755E7B200A53E64 /* ThingsToDoTableTableViewController.swift in Sources */,
+				9ED1D7D3275A0CA000C51C89 /* TicketsTableViewController.swift in Sources */,
 				9E4AF7DB2752ADA700EAECC3 /* ViewController.swift in Sources */,
+				9ED1D7D1275A0C8200C51C89 /* Ticket.swift in Sources */,
 				8243E13F2759CDD200D0C421 /* FavouritesCellTableViewCell.swift in Sources */,
 				8243E13D2759CD4300D0C421 /* FavouritesTableViewController.swift in Sources */,
 				9E4AF7D72752ADA700EAECC3 /* AppDelegate.swift in Sources */,
@@ -204,6 +215,7 @@
 				9EA92CAF2755F0CE00A53E64 /* ThingsToDoDB.swift in Sources */,
 				9EA92CB1275609AE00A53E64 /* DetailViewController.swift in Sources */,
 				9EA92CAD2755EDA400A53E64 /* ThingsToDo.swift in Sources */,
+				9ED1D7D5275A0D1200C51C89 /* TicketViewCell.swift in Sources */,
 				9E4AF7D92752ADA700EAECC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

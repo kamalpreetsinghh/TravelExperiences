@@ -9,7 +9,6 @@ import UIKit
 
 class TicketViewCell: UITableViewCell {
 
-    @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var activityPrice: UILabel!
     @IBOutlet weak var numberOfTickets: UILabel!

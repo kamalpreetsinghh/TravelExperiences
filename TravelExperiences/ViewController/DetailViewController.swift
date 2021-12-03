@@ -71,20 +71,14 @@ class DetailViewController: UIViewController {
         present(activityController, animated: true, completion: nil)
     }
     
-    @IBAction func buyActivity(_ sender: Any) {
-        guard let receivedThingsToDo = self.thingsToDo else {
+    @IBAction func buyItem(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let purchaseVC = storyboard.instantiateViewController(identifier: "PurchaseScreen") as! PurchasedTicketsViewController
+        purchaseVC.thingsToDo = self.thingsToDo
+        self.navigationController?.pushViewController(purchaseVC, animated: true)
+
             return
         }
-        
-        UsersDB.shared.currentUser.purchasedActivities.append(receivedThingsToDo)
-        
-        let alert = UIAlertController(title: "Item Purchased", message: "You have purchased \(receivedThingsToDo.name)", preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title:"OK", style: .default, handler: {(alert:UIAlertAction!)-> Void in})
-        alert.addAction(okAction)
-        
-        self.present(alert, animated:true, completion:nil)
-    }
     
     private func getRatingImages (rating: Int) {
         for _ in 1...rating {
@@ -110,6 +104,14 @@ class DetailViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let favs = storyboard.instantiateViewController(withIdentifier: "FavouritesTableView") as! FavouritesTableViewController
         self.navigationController?.pushViewController(favs, animated: true)
+    }
+    
+    @IBAction func viewTickets(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        let ticketsVC = storyboard.instantiateViewController(identifier: "purchasedticketscreen") as! TicketsTableViewController
+                
+        self.navigationController?.pushViewController(ticketsVC, animated: true)
     }
     
 }

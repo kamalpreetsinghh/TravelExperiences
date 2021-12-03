@@ -12,8 +12,8 @@ class User {
     let email: String
     let password: String
     var favourites: [ThingsToDo] = []
-    var purchasedActivities: [ThingsToDo] = []
-    
+    var tickets: [Ticket] = []
+
     init () {
         self.name = ""
         self.email = ""
@@ -42,11 +42,12 @@ class User {
         self.favourites = favourites
     }
     
-    func getPurchasedActivities() -> [ThingsToDo] {
-        return self.purchasedActivities
+    func getTickets() -> [Ticket] {
+        return self.tickets
     }
-    
-    func setPurchasedActivities(purchasedActivities: [ThingsToDo]) {
-        self.purchasedActivities = purchasedActivities
+
+    func setTickets(tickets: [Ticket]) {
+        self.tickets = tickets
     }
+
 }
