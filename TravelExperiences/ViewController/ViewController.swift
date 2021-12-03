@@ -72,12 +72,6 @@ class ViewController: UIViewController {
                     userinfo.isLoggedIn = true
 //                    userinfo.favouritesList = []
                     
-                    var userArr = defaults.dictionary(forKey: "KEY_USER_INFO")
-                    var a:[String: UserInfo] = [userinfo.email: userinfo]
-//                    defaults.set(a, forKey: "KEY_USER_INFO")
-                    
-                    userArr = defaults.dictionary(forKey: "KEY_USER_INFO")
-                    print(userArr!)
                     if isRememberMe {
                         defaults.set(isRememberMe, forKey: "KEY_REMEMBER_ME")
                     }

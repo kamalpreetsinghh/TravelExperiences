@@ -56,14 +56,14 @@ class DetailViewController: UIViewController {
         
     }
     
-    func addToFavs() {
+    @IBAction func addToFav(_ sender: Any) {
         var favList = UserDefaults.standard.array(forKey: "\(UsersDB.shared.currentUser.name).favorites") as? [String] ?? [String]()
         favList.append(thingsToDo!.name)
         
-//        let favsVC = storyboard.instantiateViewController(identifier: "Favourites") as! FavouritesViewController
-//
-//        self.navigationController?.pushViewController(favsVC, animated: true)
         UserDefaults.standard.set(favList, forKey: "\(UsersDB.shared.currentUser.name).favorites")
+        
+        print(UserDefaults.standard.array(forKey:"\(UsersDB.shared.currentUser.name).favorites"))
+        
     }
     
     @IBAction func share(_ sender: Any) {
@@ -104,8 +104,13 @@ class DetailViewController: UIViewController {
             if (application.canOpenURL(phoneCallURL)) {
                 application.open(phoneCallURL, options: [:], completionHandler: nil)
             }
+        }
     }
+    @IBAction func goToFavourites(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let favs = storyboard.instantiateViewController(withIdentifier: "FavouritesTableView") as! FavouritesTableViewController
+        self.navigationController?.pushViewController(favs, animated: true)
     }
-   
+    
 }
 

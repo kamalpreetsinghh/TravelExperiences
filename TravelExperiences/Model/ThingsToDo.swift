@@ -25,4 +25,6 @@ struct ThingsToDo {
         self.rating = rating
         self.contactNumber = contactNumber
     }
+    
+    
 }

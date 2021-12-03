@@ -11,35 +11,35 @@ class FavouritesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.rowHeight = 150
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+        var favList = UserDefaults.standard.array(forKey: "\(UsersDB.shared.currentUser.name).favorites") as? [String] ?? [String]()
+        
+        return favList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewCell", for: indexPath) as! FavouritesCellTableViewCell
 
-        // Configure the cell...
-
+        var favList = UserDefaults.standard.array(forKey: "\(UsersDB.shared.currentUser.name).favorites") as? [String] ?? [String]()
+        
+        
+        var obj = ThingsToDoDB.shared.getObjByName( favList[indexPath.row].description)
+        cell.title.text = obj!.name
+        cell.price.text = "$\(obj!.price)"
+        cell.activityImg.image = UIImage(named: obj!.images[0])
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

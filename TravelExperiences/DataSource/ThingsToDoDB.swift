@@ -16,4 +16,14 @@ class ThingsToDoDB {
         return self.thingsToDos
     }
     
+    func getObjByName(_ name: String) -> ThingsToDo? {
+        for obj in thingsToDos {
+            if obj.name == name {
+                return obj
+            }
+        }
+        return nil
+        
+    }
+    
 }
