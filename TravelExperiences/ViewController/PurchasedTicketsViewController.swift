@@ -73,4 +73,22 @@ class PurchasedTicketsViewController: UIViewController {
         self.activityPrice.text = "$\(receivedActivityDetails.price)"
         self.totalPrice.text = "\(receivedActivityDetails.price)"
     }
+
+    func addToFavs() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        let favsVC = storyboard.instantiateViewController(identifier: "Favourites") as! FavouritesViewController
+        
+        self.navigationController?.pushViewController(favsVC, animated: true)
+    }
+
+    @IBAction func callBtn(_ sender: Any) {
+        if let phoneCallURL = URL(string: "tel://\(123-123-1234)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
 }
