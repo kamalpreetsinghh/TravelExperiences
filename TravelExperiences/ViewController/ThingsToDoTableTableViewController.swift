@@ -57,7 +57,7 @@ class ThingsToDoTableTableViewController: UITableViewController {
     }
     */
     
-    func createThingsToDos() {
+    private func createThingsToDos() {
         let thingsToDo1 = ThingsToDo(name: "Nighlife in Shinjuku", price: 150.00, images: ["shinjuku", "shinjuku2"], description: "Shinjuku City encompasses the buzzing clubs and karaoke rooms of neon-lit East Shinjuku and upscale hotel bars and restaurants in the Skyscraper District. Tokyo Metropolitan Building has a popular observation deck, and Mount Hakone rises over tranquil urban parkland. Galleries, theaters, and bookstores attract students from busy campuses. ", rating: 5, contactNumber: "(456) 123-0981")
         
         let thingsToDo2 = ThingsToDo(name: "Cherry Blossoms Tour at Tokyo", price: 100.00, images: ["cherryblossom", "cherryblossom2"], description: "Cherry Blossom is a massive part of Japan's culture and history. In ancient Japan, farmers used the blooming of the cherry blossom flowers to help them know it was time to plant their rice crops. The flowers were considered to be a representation of spring, hope, beauty and new life.", rating: 4, contactNumber: "(234) 687-1235")
@@ -80,7 +80,8 @@ class ThingsToDoTableTableViewController: UITableViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        
+        self.navigationController?.popToRootViewController(animated: true)
+        UserDefaults.standard.set("", forKey: "KEY_REMEMBER_ME")
     }
 
 }

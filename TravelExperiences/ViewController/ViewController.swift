@@ -35,7 +35,9 @@ class ViewController: UIViewController {
         // set defaults
         rememberMe.isOn = false
         invalidCredentials.isHidden = true
-        
+        email.text = ""
+        password.text = ""
+        print("Hello")
         loginIfRememberMe()
     }
     
