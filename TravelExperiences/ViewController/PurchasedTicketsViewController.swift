@@ -28,7 +28,7 @@ class PurchasedTicketsViewController: UIViewController {
     
 
     @IBAction func changeTicketCount(_ sender: Any) {
-        self.ticketCountLabel.text = "\(self.ticketCount.value)"
+        self.ticketCountLabel.text = "\(Int(self.ticketCount.value))"
         
         guard let receivedActivityDetails = self.thingsToDo else {
             return

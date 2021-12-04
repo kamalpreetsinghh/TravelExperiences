@@ -15,6 +15,7 @@ class TicketViewCell: UITableViewCell {
     @IBOutlet weak var contactinfo: UILabel!
     @IBOutlet weak var contactnumber: UILabel!
     
+    @IBOutlet weak var activityImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

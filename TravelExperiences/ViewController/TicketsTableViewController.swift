@@ -11,7 +11,7 @@ class TicketsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.rowHeight = 100
+        self.tableView.rowHeight = 125
         self.navigationItem.title = "View Orders"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,6 +37,7 @@ class TicketsTableViewController: UITableViewController {
         cell.activityPrice.text = "$\(ticket.totalPrice)"
         cell.activityName.text = ticket.thingsToDo.name
         cell.numberOfTickets.text = "\(ticket.customerName)"
+        cell.activityImage.image = UIImage(named: ticket.thingsToDo.images[0])
 
         return cell
     }
