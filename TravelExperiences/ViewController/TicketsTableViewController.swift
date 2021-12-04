@@ -12,6 +12,7 @@ class TicketsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 100
+        self.navigationItem.title = "View Orders"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -35,7 +36,7 @@ class TicketsTableViewController: UITableViewController {
         let ticket = UsersDB.shared.currentUser.tickets[indexPath.row]
         cell.activityPrice.text = "$\(ticket.totalPrice)"
         cell.activityName.text = ticket.thingsToDo.name
-        cell.numberOfTickets.text = "\(ticket.ticketCount)"
+        cell.numberOfTickets.text = "\(ticket.customerName)"
 
         return cell
     }

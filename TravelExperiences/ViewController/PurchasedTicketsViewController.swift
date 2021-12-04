@@ -23,6 +23,7 @@ class PurchasedTicketsViewController: UIViewController {
         super.viewDidLoad()
 
         loadActivityDetails()
+        self.navigationItem.title = "Book Ticket"
     }
     
 
@@ -34,6 +35,7 @@ class PurchasedTicketsViewController: UIViewController {
         }
         
         self.totalPrice.text = "\(self.ticketCount.value * receivedActivityDetails.price)"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
     }
     
     @IBAction func checkout(_ sender: Any) {
@@ -71,6 +73,12 @@ class PurchasedTicketsViewController: UIViewController {
         self.activityName.text = receivedActivityDetails.name
         self.activityPrice.text = "$\(receivedActivityDetails.price)"
         self.totalPrice.text = "\(receivedActivityDetails.price)"
+    }
+    
+    
+    @IBAction func logout(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        UserDefaults.standard.set("", forKey: "KEY_REMEMBER_ME")
     }
     
 }

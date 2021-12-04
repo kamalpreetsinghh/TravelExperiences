@@ -26,6 +26,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayActivityDetails()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
     }
     
     private func displayActivityDetails(){
@@ -102,7 +104,12 @@ class DetailViewController: UIViewController {
         
         UserDefaults.standard.set(favList, forKey: "\(UsersDB.shared.currentUser.name).favorites")
         
-        print(UserDefaults.standard.array(forKey:"\(UsersDB.shared.currentUser.name).favorites"))
+        let alert = UIAlertController(title: "Activity added to Favourite list", message: "Your activity has been added to the favourites list. Book the tickets before they get sold out!", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title:"OK", style: .default, handler: {(alert:UIAlertAction!)-> Void in})
+        alert.addAction(okAction)
+        
+        self.present(alert, animated:true, completion:nil)
     }
     
     @IBAction func viewTickets(_ sender: Any) {
@@ -112,6 +119,11 @@ class DetailViewController: UIViewController {
                 
         self.navigationController?.pushViewController(ticketsVC, animated: true)
     }
+    
+    @IBAction func logout(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        UserDefaults.standard.set("", forKey: "KEY_REMEMBER_ME")
+    }   
     
 }
 
