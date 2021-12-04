@@ -99,10 +99,12 @@ class DetailViewController: UIViewController {
         }
     }
     @IBAction func goToFavourites(_ sender: Any) {
-        var favList = UserDefaults.standard.array(forKey: "\(UsersDB.shared.currentUser.name).favorites") as? [String] ?? [String]()
-        favList.append(thingsToDo!.name)
+        let def = UserDefaults.standard
+        var list = def.array(forKey: "\(UsersDB.shared.currentUser.name).favorites") as? [String]
+            ?? [String]()
+        list.append(thingsToDo!.name)
         
-        UserDefaults.standard.set(favList, forKey: "\(UsersDB.shared.currentUser.name).favorites")
+        def.set(list, forKey: "\(UsersDB.shared.currentUser.name).favorites")
         
         let alert = UIAlertController(title: "Activity added to Favourite list", message: "Your activity has been added to the favourites list. Book the tickets before they get sold out!", preferredStyle: .alert)
         

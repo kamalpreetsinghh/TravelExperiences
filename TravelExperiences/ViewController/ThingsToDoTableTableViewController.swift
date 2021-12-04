@@ -67,12 +67,14 @@ class ThingsToDoTableTableViewController: UITableViewController {
         let thingsToDo4 = ThingsToDo(name: "Tokyo Tower Tour", price: 120.00, images: ["tokyotower", "tokyotower2"], description: "The Tokyo Tower is a communications and observation tower in the Shiba-koen district of Minato, Tokyo, Japan, built in 1958. At 332.9 meters, it is the second-tallest structure in Japan.The structure is an Eiffel Tower-inspired lattice tower that is painted white and international orange to comply with air safety regulations.", rating: 5, contactNumber: "(498) 354-8765")
         
         let thingsToDo5 = ThingsToDo(name: "Mount Fuji Tour", price: 250.00, images: ["mountfuji", "mountfuji2"], description: "Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. A pilgrimage site for centuries, it’s considered one of Japan’s 3 sacred mountains, and summit hikes remain a popular activity. Its iconic profile is the subject of numerous works of art, notably Edo Period prints by Hokusai and Hiroshige.", rating: 5, contactNumber: "(198) 465-8765")
+        var thingsToDos: [ThingsToDo] = []
+        thingsToDos.append(thingsToDo1)
+        thingsToDos.append(thingsToDo2)
+        thingsToDos.append(thingsToDo3)
+        thingsToDos.append(thingsToDo4)
+        thingsToDos.append(thingsToDo5)
         
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo1)
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo2)
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo3)
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo4)
-        ThingsToDoDB.shared.thingsToDos.append(thingsToDo5)
+        ThingsToDoDB.shared.thingsToDos = thingsToDos
     }
     
     @IBAction func goToFavourites(_ sender: Any) {
